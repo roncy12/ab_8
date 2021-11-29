@@ -1,0 +1,65 @@
+{{#partial "page"}}
+<div class="by-need">
+<!-- BANNER SECTION -->
+<section class="custom-banner-section position-relative">
+<img class="lazyload" src="https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/cbd-mood-pro-banner.png?t=1636090823&_gl=1*r7ttv9*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNjA5MDMzOC4zNDguMS4xNjM2MDkxNjc5LjYw" alt="banner">
+<div class="position-absolute w-100 h-100 top-0 d-flex justify-content-center align-items-center">
+         <h2 class="h2-banner-title text-light">
+            CBD <span class="text-capitalize">Sleep Mood Products For Sale</span>
+         </h2>
+</div>
+</section>
+<!-- END OF BANNER SECTION  -->
+
+<!-- PRODUCT SECTION  -->
+<div class="container">
+         <div class="row-product position-relative">
+                  <div class="d-block">
+                           <h2 class="h2-product-title">CBD Creams for Pain Relief</h2>
+                  </div>
+                  <div class="product-columns d-flex align-items-start justify-content-start">
+                           <div class="tinctures-grid pt-5 homepage-featured categ addcart-show">
+                                    <main class="page-content" id="product-listing-container">
+                                        {{#if category.subcategories}}
+                                            {{#if category.products}}
+                                                {{json category.products}}
+                                                {{> aoc-custom/components/category/product-listing}}
+                                                 {{filter name "===" }}
+                                            {{/if}}
+                                            {{#each category.subcategories}}
+                                                {{name}}
+                                                {{product_count}}
+                                                {{url}}
+                      
+                                            {{/each}}
+                                        {{/if}}
+                                        
+
+                                        {{#each category.products}}
+                                            {{#if name "===" 'CBD Cream Dummy'}}
+                                                               {{> aoc-custom/components/category/product-listing}}
+                                                            {{else}}
+                                                                
+                                            {{/if}}
+
+                                        {{/each}}
+
+                                             {{#if category.products}}
+                                                {{> aoc-custom/components/category/product-listing}}
+                                             {{else}}
+                                              <p>{{lang 'categories.no_products'}}</p>
+                                             {{/if}}
+                                             {{{region name="category_below_content"}}}
+                                    </main>
+                           </div>
+                  </div>
+         </div>
+</div>
+
+
+
+<!-- END OF PRODUCT SECTION  -->
+</div>
+{{/partial}}
+
+{{>layout/base}}

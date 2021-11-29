@@ -1,0 +1,61 @@
+{{#partial "page"}}
+<div class="by-need">
+<!-- BANNER SECTION -->
+<section class="custom-banner-section position-relative">
+<img class="lazyload w-100" src="https://store-2r0p327be1.mybigcommerce.com/content/byneed/{{#replace ' '  (toLowerCase  category.name)}}-{{else}}{{toLowerCase  category.name}}{{/replace}}.png"/>
+<div class="position-absolute w-100 h-100 top-0 d-flex justify-content-center align-items-center">
+         <h2 class="h2-banner-title text-light" style="text-transform: none !important;">
+                  {{category.name}}
+         </h2>
+</div>
+</section>
+<!-- END OF BANNER SECTION  -->
+
+<!-- PRODUCT SECTION  -->
+<div class="mb-5">
+        <div class="tinctures-grid mt-5 pt-3 homepage-featured tincs addcart-show mt-0" component>
+                
+        </div>
+</div>
+</div>
+<!-- END OF PRODUCT SECTION  -->
+</div>
+{{/partial}}
+
+{{>layout/base}}
+
+{{inject "categoryIds" category.subcategories}}
+<script>
+         var temp = JSON.parse({{jsContext}});
+         var categ_array = temp.categoryIds;
+        $.each(categ_array,function(key,val){
+                var html ='';
+                  $.ajax({
+                           url: '/categories?category=' + val.id,
+                           type: 'GET',
+                           dataType: 'html',
+                           success:function(e){
+                               var product_rows = jQuery(e).find('form[data-product-compare]').html();
+                               html = '<div class="row-product position-relative">'+
+                                    '<div class="d-block"><h2 class="h2-product-title ml-3">'+ val.name +'</h2></div>'+
+                                    '<div class="product-column ">'+
+                                    '<main class="page-content" id="product-listing-container">'+
+                                    product_rows +
+                                    '</main>'+         
+                                    '</div>' +
+                                    '</div>';
+                           $('[component]').append(html);
+                           }
+
+                                
+                  });
+        });
+        
+        $(document).ready(function(){
+                if ($(".tinctures-grid.mt-5.pt-3.homepage-featured.tincs.addcart-show.mt-0").find("div").length < 1) {
+                        $(".tinctures-grid.mt-5.pt-3.homepage-featured.tincs.addcart-show.mt-0").append("<p class='my-5'>There are no products listed under this category.</p>")
+                }
+
+        });
+
+</script>

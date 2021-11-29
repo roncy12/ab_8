@@ -1,0 +1,250 @@
+<div class="container 4661726c6579 custom-tabs">
+    {{#or product.description product.videos.list.length}}
+        <div class="accordion-block d-none">
+            <div
+                class="accordion-navigation toggleLink"
+                role="button"
+                data-collapsible="#accordion--benefits">
+                <h5 class="accordion-title">
+                    Benefits
+                </h5>
+       
+                <div class="accordion-navigation-actions">
+                    <svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
+                        <use xlink:href="#icon-plus" />
+                    </svg>
+                    <svg class="icon accordion-indicator toggleLink-text toggleLink-text--on">
+                        <use xlink:href="#icon-plus" />
+                    </svg>
+                </div>
+            </div>
+            <div id="accordion--description" class="accordion-content">
+                <div {{#if schema}} itemprop="description"{{/if}}>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+               
+                {{#if product.videos.list.length}}
+                    {{> components/products/videos product.videos}}
+                {{/if}}
+            </div>
+        </div>
+    {{/or}}
+
+<!-- Custom Tabs -->
+    <div class="d-flex flex-column">  
+
+            <div class="order-3">
+                {{#eachIndex (split product.description '<!-- split -->')}}
+             
+                    {{#if index '==' '1' }}
+                        <details class="custom-details">
+                            <summary class="custom-summary ing"><a class="accordion-title">Ingredients</a>
+                                <svg class="icon">
+                                    <use xlink:href="#icon-plus" />
+                                </svg></summary>
+                                <div class="details-wrapper">
+                                    <div class="details-styling">  
+                                       
+                                        {{#replace "Ingredients:" item}}
+                                        {{else}}
+                                        {{item}}
+                                        {{/replace}}
+                                   
+                                    </div>
+                                </div>
+                            </details>
+                    {{/if}}
+
+                {{/eachIndex}}
+            </div>
+
+        <!-- End of Ingredients -->
+
+    <!-- Directions -->
+        <div class="order-2">
+            {{#eachIndex (split product.description '<!-- split -->')}}
+
+                            {{#if index '==' '2' }}
+                                <details class="custom-details">
+                                    <summary class="custom-summary"><a class="accordion-title">Directions</a>
+                                     <svg class="icon">
+                                        <use xlink:href="#icon-plus" />
+                                    </svg></summary>
+                                        <div class="details-wrapper">
+                                            <div class="details-styling">  
+                                                {{#replace ":" item}}
+                                                    {{else}}
+                                                    {{item}}
+                                                {{/replace}}
+                                           
+                                            </div>
+                                        </div>
+                                    </details>
+                                {{else}}
+
+
+                {{/if}}
+            {{/eachIndex}}
+        </div>
+    <!-- Benefits -->
+                        <div class="order-1">
+                                {{#eachIndex (split product.description '<!-- split -->')}}
+                                                   
+                                {{#if index '==' '3' }}
+                                    <details class="custom-details ">
+                                        <summary class="custom-summary "><a class="accordion-title">Benefits</a>  
+
+                                        <svg class="icon">
+                                            <use xlink:href="#icon-plus" />
+                                        </svg></summary>
+                                            <div class="details-wrapper">
+                                                <div class="details-styling ">      
+                                                    {{#replace "Benefits:" item}}
+                                                    {{else}}
+                                                    {{item}}
+                                                    {{/replace}}
+                                                </div>
+                                            </div>
+                                    </details>
+                                {{/if}}        
+
+                            {{/eachIndex}}
+                        </div>
+
+
+        </div>
+
+
+
+    {{#unless theme_settings.show_short_desc}}
+        {{#if product.warranty}}
+            <div class="accordion-block">
+                <div
+                    class="accordion-navigation toggleLink"
+                    role="button"
+                    data-collapsible="#accordion--warranty">
+                    <h5 class="accordion-title">
+                        Warranty
+                    </h5>
+   
+                    <div class="accordion-navigation-actions">
+                        <svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
+                            <use xlink:href="#icon-plus" />
+                        </svg>
+                        <svg class="icon accordion-indicator toggleLink-text toggleLink-text--on">
+                            <use xlink:href="#icon-minus" />
+                        </svg>
+                    </div>
+                </div>
+   
+                <div id="accordion--warranty" class="accordion-content">
+                    {{{product.warranty}}}
+                </div>
+            </div>
+        {{/if}}
+    {{/unless}}
+   
+    {{#if product.custom_fields}}
+    <div class="accordion-block d-none">
+        <div
+            class="accordion-navigation toggleLink"
+            role="button"
+            data-collapsible="#accordion--custom-fields">
+            <h5 class="accordion-title">
+                Additional Information
+            </h5>
+   
+            <div class="accordion-navigation-actions">
+                <svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
+                    <use xlink:href="#icon-plus" />
+                </svg>
+                <svg class="icon accordion-indicator toggleLink-text toggleLink-text--on">
+                    <use xlink:href="#icon-minus" />
+                </svg>
+            </div>
+        </div>
+   
+        <div id="accordion--custom-fields" class="accordion-content">
+            <dl class="productView-info">
+                {{#each product.custom_fields}}
+                    <div>
+                        <dt class="productView-info-name">{{name}}:</dt>
+                        <dd class="productView-info-value">{{{value}}}</dd>
+                    </div>
+                {{/each}}
+            </dl>
+        </div>
+    </div>
+    {{/if}}
+</div>
+
+{{#and product.related_products theme_settings.related_products_tab}}
+    <div class="accordion-block">
+        <div class="container">
+            <div
+                class="accordion-navigation toggleLink"
+                role="button"
+                data-collapsible="#accordion--related">
+                <h5 class="accordion-title">
+                    {{lang 'products.related_products'}}
+                </h5>
+       
+                <div class="accordion-navigation-actions">
+                    <svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
+                        <use xlink:href="#icon-plus" />
+                    </svg>
+                    <svg class="icon accordion-indicator toggleLink-text toggleLink-text--on">
+                        <use xlink:href="#icon-minus" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+   
+        <div id="accordion--related" class="accordion-content">
+            <div class="grid-bg">
+                <div class="container">
+                    {{> components/products/related products=product.related_products columns=6}}
+                </div>
+            </div>
+        </div>
+    </div>
+{{/and}}
+
+{{#and product.similar_by_views theme_settings.customer_viewed_products_tab}}
+    <div class="accordion-block">
+        <div class="container">
+            <div
+                class="accordion-navigation toggleLink"
+                role="button"
+                data-collapsible="#accordion--similar">
+                <h5 class="accordion-title">
+                    {{lang 'products.similar_by_views'}}
+                </h5>
+       
+                <div class="accordion-navigation-actions">
+                    <svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
+                        <use xlink:href="#icon-plus" />
+                    </svg>
+                    <svg class="icon accordion-indicator toggleLink-text toggleLink-text--on">
+                        <use xlink:href="#icon-minus" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+   
+        <div id="accordion--similar" class="accordion-content">
+            <div class="grid-bg">
+                <div class="container">
+                    {{> components/products/similar-by-views products=product.similar_by_views columns=6}}
+                </div>
+            </div>
+        </div>
+    </div>
+{{/and}}
+
+<div class="spacing-bottom"></div>
+<script>
+    $(document).ready(function(){
+
+    });
+</script>

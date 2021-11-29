@@ -1,0 +1,40 @@
+<a class="navPages-action has-subMenu{{#if is_active}} activePage{{/if}}"
+   href="/category-main-page/"
+   data-collapsible="navPages-{{id}}"
+>Shop &nbsp; &nbsp;
+    <i class="icon navPages-action-moreIcon" aria-hidden="true">
+        <svg><use xlink:href="#icon-chevron-down" /></svg>
+    </i>
+</a>
+<div class="column-menu navPage-subMenu" id="navPages-{{id}}" aria-hidden="true" tabindex="-1">
+    
+    <ul class="navPage-subMenu-list">
+        {{#each categories}}
+                    {{#inArray (split "By Need - Everyday Wellness,CBD Tarts,By Need - Pain Relief,By Need - Sleep Aids,By Need - Sore Muscle,By Need - Stress Relief Products,By Need - Mood,Workout Aids,CBD Cartridges" ",") name }}
+                    
+                {{else}}
+                  <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action dropdown-action navPages-action{{#if is_active}} activePage{{/if}}" href="{{url}}">
+                            <img class="mt-2 mb-2 nav-img" src="{{cdn (concat '..img/nav/' (concat  (lowercase (dashcase name)) '.png'))}}"  />
+                            {{#if name "===" 'CBD for Pets' }}
+                            <p class="categ-name">For Pets</p>
+                            {{else}}
+                                <p class="categ-name">{{name}}</p>
+                            {{/if}}
+
+                        </a>
+                                           
+
+                    </li>
+
+                {{/inArray}}
+        {{/each}}
+        <li class="navPage-subMenu-item">
+            <a class="navPage-subMenu-action dropdown-action navPages-action{{#if is_active}} activePage{{/if}}" href="{{url}}">
+                <img class="mt-2 mb-2 nav-img" data-sizes="auto" src="{{cdn 'img/BrandDefault.gif'}}" data-src="{{getImage image}}" alt="{{image.alt}}" title="{{image.alt}}">
+                <p class="categ-name">P dot P</p>
+            </a>
+        </li>
+    </ul>
+</div>
+

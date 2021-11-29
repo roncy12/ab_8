@@ -1,0 +1,33 @@
+{
+  "customLayouts": {
+    "brand": {
+      "pp-brandpage.html":"/pp-brandpage/",
+      "p-dot-p.html":"/p-dot-p/"
+    },
+    "category": {
+      "category-cbd-tinctures.html": "",
+      "subcategory-page.html": "/cbd",
+      "by-need.html": "/by-need-cbd-sore-muscle-products/",
+      "cbd-cbg-subcateg.html":"/cbd-cbg-liposomal/1250-mg-spray/",
+      "bathbombs-sub.html":"/cbd-bath/cbd-bath-bomb-50-mg/",
+      "cbd-delta-shot.html":"/cbd-delat-8/shot/",
+      "drinks-subcateg":"/cbd-drinks/water/",
+      "liposomal-subcategory-page.html":"/cbd-liposomal/1300-mg-spray/",
+      "sleep-aids-sub.html":"/cbd-sleep-aids/cbd-liposomal-for-sleep/",
+      "cbd-bath-balms.html":"/cbd-topicals/cbb-balm/",
+      "cbd-bath-oil.html":"/cbd-topicals/cbd-bath-body-oil/",
+      "cbd-bath-creme.html":"/cbd-topicals/cbd-cremes/",
+      "cbd-bath-lotion.html":"/cbd-topicals/cbd-lotion/",
+      "cbd-bath-roll-on":"/cbd-topicals/cbd-roll-on/"
+    },
+    "page": {
+      "about-us-page.html": "/about-us/",
+      "main-category.html":"/category-main-page/",
+      "pp-brandpage.html":"/pp-brandpage/"
+    },
+    "product": {}
+  },
+  "apiHost": "https://api.bigcommerce.com",
+  "normalStoreUrl": "https://www.accelerationbrands.us/",
+  "port": "3000"
+}

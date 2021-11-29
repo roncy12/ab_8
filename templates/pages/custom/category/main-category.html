@@ -1,0 +1,379 @@
+---
+category:
+    shop_by_price: true
+    products:
+        limit: {{theme_settings.categorypage_products_per_page}}
+---
+{{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{inject "categoryId" category.id}}
+
+
+
+{{#partial "head"}}
+    {{#if pagination.category.previous}}
+        <link rel="prev" href="{{pagination.category.previous}}">
+    {{/if}}
+    {{#if pagination.category.next}}
+        <link rel="next" href="{{pagination.category.next}}">
+    {{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+<div class="page page--category">
+    <section class="page-content container" style="display: none;">
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        {{#unless theme_settings.hide_category_page_heading }}
+            <h1 class="page-heading">{{category.name}}</h1>
+        {{/unless}}
+        {{{region name="category_below_header"}}}
+        {{{category.description}}}
+        {{#if theme_settings.show_subcategories}}
+            {{#if category.subcategories}}
+                <div class="sidebarBlock page-content-subcategories">
+                    <h5 class="sidebarBlock-heading">Subcategories:</h5>
+                    <ul class="navList">
+                        {{#each category.subcategories}}
+                        {{name}}
+                            {{#inArray (split "CBD Stress Relief Products For Sale,CBD Pain Relief Products For Sale,CBD Mood Products For Sale,CBD Everyday Wellness Products For Sale,CBD Sleep Aids Products For Sale,CBD Sore Muscle Products For Sale" ",") name }}
+                            
+                            {{else}}
+                            <li class="navList-item">
+                                <a class="navList-action" href="{{url}}" alt="{{name}}" title="{{name}}">
+                                    <div class="image-wrap{{#unless image}} image-placeholder{{/unless}}">
+                                    {{#if image}}
+                                        <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image}}" alt="{{image.alt}}" title="{{image.alt}}">
+                                    {{else}}
+                                        <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'assets/img/BrandDefault.gif'}}" alt="{{image.alt}}" title="{{image.alt}}">
+                                    {{/if}}
+                                    </div>
+                                    <span>{{name}}</span>
+                                </a>
+                            </li>
+                            {{/inArray}}
+                        {{/each}}
+                    </ul>
+                </div>
+            {{/if}}
+        {{/if}}
+    </section>
+  
+        <div class="main full grid-bg p-0" >
+            <div class="container mw-100 p-0 bg-white">
+          <!-- Image Banner -->
+          <div class="cbd-tinctures-bg">
+            <div class="cbd-oil-banner">
+                <div class="col-md-6 col-sm-6 col-xs-6 text-content">
+                    <div>
+                        <h2 class="text-light">CBD PRODUCTS FOR SALEs</h2>
+                        <p class="text-light">
+                            Buy CBD oil from our collection of high quality CBD products for sale – including CBD oil tinctures, CBD infused gummies, CBD oil capsules, and CBD for sleep in a variety of options. Our CBD products deliver superior hemp extracts with consistent quality
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 content-image">
+                    <img src="{{cdn 'https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/main-categ-right.png?t=1635999393&_gl=1*16iepop*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNTk5NDY1My4zNDEuMS4xNjM1OTk0OTQ1LjYw'}}" />
+                </div>
+            </div>
+        </div>
+               <!-- Grid Dynamic Product-->                   
+               <div class="tinctures-grid pt-5 homepage-featured categ d-none">
+                <main class="page-content" id="product-listing-container" style="">
+                    {{#if category.products}}
+                        {{> aoc-custom/components/category/product-listing}}
+                    {{else}}
+                        <p>{{lang 'categories.no_products'}}</p>
+                    {{/if}}
+                    {{{region name="category_below_content"}}}
+                </main>
+            </div>
+                        <!--Grid Products  s-->
+                <div class="sheet-grid-section mt-5 pt-3" >
+
+                    {{#each categories}}
+
+      
+                            <div class="cdb-product">
+                                {{#inArray (split "CBD Stress Relief Products For Sale,CBD Pain Relief Products For Sale,CBD Mood Products For Sale,CBD Everyday Wellness Products For Sale,CBD Sleep Aids Products For Sale,CBD Sore Muscle Products For Sale" ",") category.name }}
+                                    h{{name}}
+                                {{else}}
+                                    <img src="https://store-2r0p327be1.mybigcommerce.com/content/categlist/{{#replace ' '  (toLowerCase  name)}}-{{else}}{{toLowerCase  name}}{{/replace}}.png"/>
+                                    <div class="content">
+                                        <h4 class="mb-5">{{name}}</h4>
+                                        <div>&nbsp;</div>
+                                        <div class="shop-button">
+                                            <a href="{{url}}" >Shop Products</a>
+                                        </div>
+                                    </div>
+
+                            </div>
+                        {{/inArray}}
+                    {{/each}}
+
+                </div>
+         <!-- Features -->
+         <div class="p-5 mt-5 categ-features">
+            <div class="features-row">
+                <div class="col1">
+                    <img src="{{cdn '../img/categpage/chemistry.png'}}" class="d-block mx-auto">
+                    <p>Third-Party<br> Lab Test</p>
+                </div>
+                
+                <div class="col2">
+                    <img src="{{cdn '../img/categpage/usa-hemp.png'}}" class="d-block mx-auto">
+                    <p class="mt-00">Usa Hemp</p>
+                </div>
+                
+                <div class="col3">
+                    <img src="{{cdn '../img/categpage/superior-circle.png'}}" class="d-block mx-auto">
+                    <p>Superior <br>Broad Spectrum</p>
+                </div>
+                
+                <div class="col4">
+                    <img src="{{cdn '../img/categpage/thc.png'}}" class="d-block mx-auto">
+                    <p class="mt-00">&nbsp; Non-Thc1</p>
+                </div>
+                
+                <div class="col5">
+                    <img src="{{cdn '../img/categpage/GMP.png'}}" class="d-block mx-auto">
+                    <p class="mt-00">&nbsp; Gmp Certified</p>
+                </div>
+            </div>
+         </div>
+         <!-- Cbd Skin Care Products -->
+         <div class="cbd-skin-care-bg">
+            <div class="row cbd-skin-care w-100 pt-5 pb-5">
+                <div class="col-md-6 col-sm-6 col-xs-2 development-main-image">
+                    <!-- <img src="https://alwaysopencommerce.com/wp-content/themes/alwaysopencommerce/assets/images/akeneo-pim.png"> -->
+                </div>
+                
+                <div class="col-md-6 col-sm-6 col-xs-12 cbd-body-content">
+                  <h4>CBD Products</h4>
+
+                  <div>
+                      <p class="top">At Acceleration Brands, we are committed to offering the best in superior CBD products to our customers. Browse our high quality CBD oil products for sale to find tinctures, gummies, capsules, pet products, and more in a variety of strengths and options from a wide variety of high quality suppliers.</p>
+
+                  </div>
+                </div>
+            </div>            
+        </div>
+        <!--Properties CBD Skin Care  -->
+        <div class="row properties-cbd row-reverse w-100 position-relative mx-0">
+                <div class="col-md-6 col-sm-6 col-xs-2 px-0">
+                    <img src="{{cdn 'https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/choose-us-main.png?t=1635997722&_gl=1*n0kpg7*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNTk5NDY1My4zNDEuMS4xNjM1OTk0OTQ1LjYw'}}">
+                </div>
+                
+                <div class="col-md-6 col-sm-6 col-xs-12 position-relative cbd-properties">
+                    <div class="abs-con">                     
+                        <h4>WHY CHOOSE OUR PRODUCTS</h4>
+                        <div>
+                            <p class="top">At Acceleration Brands, we pride ourselves on providing you with the absolute best. That means all our CBD products for sale are sourced with only the highest-quality suppliers and Brands. All of our products are THC free* CBD sourced from USA hemp. Our suppliers are intimate with the entire process, they are involved in every step of the process, from seed to shelf, which is how we know our CBD products are superior. Whether it’s our CBD oil tinctures or our delicious CBD gummies, you can always trust Acceleration Brands to offer nothing but the best.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+        </div>   
+        
+        <!-- Types of Cbd Skin Care Products -->
+        <div class="types-cbd-skin position-relative">
+            <div class="row cbd-skin-care w-100 mx-0 position-relative">
+                <div class="col-md-6 col-sm-6 col-xs-2 cbd-main-image mx-0 px-0">
+                    <img src="{{cdn '../img/categpage/skin-care-prod.png'}}" class="h-100 main">
+                </div>
+                
+                <div class="col-md-6 col-sm-6 col-xs-12 types-cbd-bg px-0 position-relative">
+                    <div class="abs-con">
+                        <h4 class="d-none">Types of Cbd<br> Skin Care Products</h4>
+                        <p class="d-none">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      
+                        <div class="types-cbd-ul">
+                            <ul>
+                                <li>
+                                    CBD OIL TINCTURES
+                                    <p>Our CBD oil tinctures only use hemp derived CBD combined with MCT oil. CBD tinctures are ideal for daily use with an easy-to-use rubber dropper for adjusting your CBD intake. Choose from a variety of flavors, including mint, orange, berry, and natural.</p>
+                                </li>
+                                <li>
+                                    TOPICAL CBD
+                                  <p>Our CBD topicals are CBD creams and CBD lotions that target different areas of discomfort. They combine CBD with ingredients such as menthol, lidocaine, essential oils, and more to help deliver temporary pain relief, aid muscle recovery, and moisturize skin.</p>
+                                </li>
+   
+                                <li>
+                                    CBD FOR SLEEP
+                                    <p>Our award winning CBD PM provides an alternative to traditional sleep aids by combining quality CBD oil with melatonin and other natural ingredients to promote sleep. Our CBD PM tincture comes in a mint flavor with an easy-to-use dropper.</p>
+                                </li>
+                                <li>
+                                    CBD BATH BOMBS
+                                  <p>Our CBD bath bombs help deliver revitalizing relaxation thanks to a rejuvenating combination of CBD, essential oils, Epsom salt, and other natural ingredients. CBD bath salts combine superior CBD with natural salts for a luxurious bath time experience.</p>
+                                </li>
+                                <li>
+                                    CBD GUMMIES
+                                  <p>Our award winning CBD gummies are CBD infused for lasting quality and made with the same attention to superior ingredients as our other products. A mix of tropical, orange, strawberry, and raspberry flavors come in each bottle.</p>
+                                </li>
+                                <li>
+                                    CBD CAPSULES
+                                  <p>The easy-to-swallow CBD oil capsules come in 30 or 60-count bottles with CBD oil concentrations ranging from 450 mg to 3000 mg. Our premium CBD capsules and CBD softgels can be used daily as a part of any balanced wellness routine.</p>
+                                </li>
+                                <li>
+                                    CBD PET PRODUCTS
+                                  <p>Our CBD products for pets are made with premium CBD extracts and additional ingredients to support everyday wellness for your pet. Choose from a variety of products in various concentrations tailored to promote the daily health of dogs and cats.</p>
+                                </li>
+    
+                                <li>
+                                    CBD SUBSCRIPTIONS
+                                  <p>Find the best premium CBD oil bundle for you or anyone in your life. Our CBD bundles enhance your wellness regimen in multiple ways, all at one low price. Choose a suite of exclusive CBD products for sale to help you bundle and save.</p>
+                                </li>
+                            </ul>    
+                        </div>
+                    </div>
+
+                </div>
+            </div>            
+        </div>
+        <!-- Why Choose Us -->
+        <div class="row properties-cbd row-reverse w-100 position-relative mx-0">
+            <div class="col-md-6 col-sm-6 col-xs-2 px-0">
+                <img src="{{cdn '../img/categpage/why-choose.png'}}">
+            </div>
+            
+            <div class="col-md-6 col-sm-6 col-xs-12 position-relative cbd-properties">
+                <div class="abs-con">                     
+                    <h4 class="color-h4 d-none">Why Choose Us?</h4>
+                    <div class="font-h4">
+                        <h4 class="color-h4 d-none">Lorem ipsum dolor sit amet</h4>
+                        <p class="size-p">At Acceleration Brands, we pride ourselves on providing you with the absolute best. That means all our CBD products for sale are sourced with only the highest-quality suppliers and Brands. All of our products are THC free* CBD sourced from USA hemp. Our suppliers are intimate with the entire process, they are involved in every step of the process, from seed to shelf, which is how we know our CBD products are superior. Whether it’s our CBD oil tinctures or our delicious CBD gummies, you can always trust Acceleration Brands to offer nothing but the best.
+                            <br><br>
+                            What Makes our CBD Product Selection Different?<br>
+                            NOT ALL CBD OIL PRODUCTS ARE THE SAME! WE KNOW YOU HAVE A WIDE VARIETY OF CBD PRODUCTS TO CHOOSE FROM, BUT WE’RE THE ONLY ONES OFFERING OUR A WIDE VARIETY OF PROPRIETARY SUPERIOR BROAD SPECTRUM CBD FORMULA PRODCUTS.
+                            <br><br>
+                            Our suppliers start with non-GMO hemp grown only in the U.S., ensuring that it has no more than 0.3% THC. Then they extract pure CBD and blend it with a carefully selected and measured suite of terpenes and additional cannabinoids (CBG and CBN) – all while ensuring all products are THC-free.*</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>   
+        <!-- To Sum It Up -->
+        <h2 class="h4-faqs mb-0">The Breakdown...</h2>
+        <p class="text-center w-75 mx-auto">To pick from our most popular CBD products at a glance, take a quick look at our handy product information chart!</p>
+
+        <div class="table-div-con table-responsive">
+
+            <div class="sum-img mt-5 pt-2" data-aos="fade-up">
+                <div class="text-left">
+                    <img class="lazyload d-block mx-auto" src="{{cdn 'https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/cbd-gummies-tab.png?t=1635994941&_gl=1*1dqjn7i*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNTk5NDY1My4zNDEuMS4xNjM1OTk0OTQ1LjYw'}}" />
+                    <p>CBD Gummies</p>
+                </div>
+                <div class="text-center">
+                    <img class="lazyload" src="{{cdn 'https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/cbd-recover.png?t=1635994942&_gl=1*1dqjn7i*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNTk5NDY1My4zNDEuMS4xNjM1OTk0OTQ1LjYw'}}" />
+                    <p>CBD Recover</p>
+                </div>
+                <div class="text-center">
+                    <img class="lazyload" src="{{cdn 'https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/cbd-pm.png?t=1635994941&_gl=1*1dqjn7i*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNTk5NDY1My4zNDEuMS4xNjM1OTk0OTQ1LjYw'}}" />
+                    <p>CBD PM</p>
+                </div>
+                 <div class="text-center">
+                    <img class="lazyload" src="{{cdn 'https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/cbd-pm.png?t=1635994941&_gl=1*1dqjn7i*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNTk5NDY1My4zNDEuMS4xNjM1OTk0OTQ1LjYw'}}" />
+                    <p>CBD Tinctures </p>   
+                </div>
+                 <div class="text-center">
+                     <img class="lazyload" src="{{cdn 'https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/cbd-capsule-softgel.png?t=1635994939&_gl=1*m9um9t*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNTk5NDY1My4zNDEuMS4xNjM1OTk0OTQ1LjYw'}}" />
+                    <p>CBD Capsules & Softgels</p>
+                </div>
+            </div>
+
+            <table class="table table-bordered categ-table">
+                <tbody>
+                  <tr>
+                    <th scope="row"><p class="mt-2 mb-0 text-center" >PAIN RELIEF</p></th>
+                    <td></td>
+                    <td> <img src="{{cdn '../img/categpage/check.png'}}"> </td>
+                    <td></td>
+                    <td> </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><p class="mt-2 mb-0 text-center">STRESS</p></th>
+                    <td></td>
+                    <td> </td>
+                    <td> <img src="{{cdn '../img/categpage/check.png'}}"></td>
+                    <td></td>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><p class="mt-2 mb-0 text-center">EVERYDAY WELLNESS</p></th>
+                    <td> <img src="{{cdn '../img/categpage/check.png'}}"></td>
+                    <td><img src="{{cdn '../img/categpage/check.png'}}"></td>
+                    <td> </td>
+                    <td><img src="{{cdn '../img/categpage/check.png'}}"></td>
+                    <td><img src="{{cdn '../img/categpage/check.png'}}"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><p class="mt-2 mb-0 text-center">SLEEP</p></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td> </td>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><p class="mt-2 mb-0 text-center">MOOD</p></th>
+                    <td> </td>
+                    <td> </td>
+                    <td><img src="{{cdn '../img/categpage/check.png'}}"></td>
+                    <td><img src="{{cdn '../img/categpage/check.png'}}"></td>
+                    <td><img src="{{cdn '../img/categpage/check.png'}}"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><p class="mt-2 mb-0 text-center">SORE MUSCLES</p></th>
+                    <td> </td>
+                    <td><img src="{{cdn '../img/categpage/check.png'}}"> </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+
+
+                <!-- Frequently Asked Question -->
+
+                <h2 class="h4-faqs">Frequently Asked Questions</h2>
+                <button class="custom-accordion">
+                    <div>WHAT IS CBD OIL MADE FROM?</div>
+                    <div><svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
+                    <use xlink:href="#icon-plus"> </use>
+                    </svg></div>
+                </button>
+                <div class="panel">
+                <p>CBD oil is made by extracting CBD isolates from industrial hemp and then infused into a carrier oil. There are many ways to extract CBD isolates from raw hemp material – some methods allow the retention of other beneficial cannabinoids and terpenes. The carrier oil is usually a type of coconut-based oil or palm kernel oil.</p>
+                </div>
+                
+                <button class="custom-accordion">
+                    <div>HOW TO USE CBD?</div>
+                    <div><svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
+                    <use xlink:href="#icon-plus"> </use>
+                    </svg></div>
+                </button>
+                <div class="panel">
+                <p>There are several different ways you can use CBD oil, depending on your purpose for using it. You can use CBD for temporary relief from pain and soreness by applying a generous amount of topical cream into the skin or soaking in water with a bath bomb. Or CBD could be helpful for general wellness with a few tincture drops or a couple of capsules in the morning or evening. And for sleep, a dropper full from a CBD sleep aid or a softgel before bed may help.
+                    <br><br>
+                    However, consistency is essential for achieving the best results; you should take CBD daily for at least 30 days to know how well it works for you</p>
+                </div>
+                
+                <button class="custom-accordion border-bottom  border-secondary mb-5">
+                    <div>HOW DOES CBD OIL WORK?</div>
+                    <div><svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
+                    <use xlink:href="#icon-plus"> </use>
+                    </svg></div>
+                </button>
+                <div class="panel border-bottom border-secondary mb-5">
+                 <p>CBD oil works by interacting with a bodily system known as the endocannabinoid system (or ECS). The primary function of our ECS is to maintain homeostasis, which is our bodies' natural balance to perform and operate efficiently against external and internal stressors.</p>
+                </div>
+
+            </div>
+        </div>
+
+</div>
+
+
+{{/partial}}
+{{> layout/base}}

@@ -1,0 +1,126 @@
+{{#partial "page"}}
+<div class="container">
+    <!-- {{> components/common/breadcrumbs breadcrumbs=breadcrumbs style='opacity: 0'}} -->
+    <main class="page">
+        {{#unless theme_settings.hide_page_heading }}
+            <h1 class="page-heading" style="display: none;">{{ page.title }}</h1>
+        {{/unless}}
+    
+        {{#if page.sub_pages}}
+        <nav class="navBar navBar--sub">
+            <ul class="navBar-section account-navigation">
+            {{#each page.sub_pages}}
+                <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
+            {{/each}}
+            </ul>
+        </nav>
+        {{/if}}
+        
+        {{{region name="page_builder_content"}}}
+    
+        <div class="page-content">
+            <!--About Us Banner  -->
+            <div class="about-us-bg">
+                <div class="about-us-section">
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-content">
+                        <div>
+                            <h2 class="text-light">ONLY GREAT PRODUCTS <br>
+                                & GREAT BRANDS</h2>
+                            <p class="text-light">
+                                Distribution partner to the leading CBD, hemp derived, beverage, edibles, tinctures, terpenes, health & beauty brands.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 content-image">
+                        <img src="{{cdn '../img/inners/Multi-Product_images.png'}}" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Your CBD Products  -->
+            <div class="row properties-cbd row-reverse w-100 position-relative mx-0 mt-5 pt-4 mb-5 pb-5 dist-con">
+                <div class="col-md-6 col-sm-6 col-xs-2 px-0 dist-part-img">
+                    <img class="lazyload" src="{{cdn '../img/inners/partner-img.png'}}">
+                </div>
+                            
+                <div class="col-md-6 col-sm-6 col-xs-12 position-relative cbd-properties">
+                    <div class="abs-con about-abs-con">                     
+                        <h4 class="h2 text-capitalize font-weight-normal">Your CBD Products<br>Distribution Partner</h4>
+                        <div>
+                            <h4><img class="lazyload mr-1" src="{{cdn '../img/inners/arrow-right.png'}}">&nbsp;Our Business</h4>
+                            <p>Acceleration Brands develop and distributes leading edibles, beverages, tinctures, terpenes, and health & beauty CBD products.</p>
+                            <h4><img class="lazyload mr-1" src="{{cdn '../img/inners/arrow-right.png'}}">&nbsp;Brand Partners</h4>
+                            <p>We work as an extension of our brand partners to develop, execute, and manage our partners Brands in an increasingly complicated & crowded marketplace.</p>
+                            <h4><img class="lazyload mr-1" src="{{cdn '../img/inners/arrow-right.png'}}">&nbsp;Our Customers</h4>
+                            <p>Our customers are the leading retail companies investing in the highest quality and cutting edge products, and the leading distributor operators for the market.</p>
+                            <h4><img class="lazyload mr-1" src="{{cdn '../img/inners/arrow-right.png'}}">&nbsp;Our Mission</h4>
+                            <p>Here at Acceleration Brands; we believe it is out responsibility to promote Health and Wellness through the normalization of CBD and hemp derived products as part of a heathy lifestyle.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Brands -->
+            <h4 class="h2 mx-auto w-75 text-center h4-brands">Our Brands</h4>
+            <!-- Gallery image grid  -->
+            <div class="image-grid pb-0">
+                <img class="image-grid-col-2 image-grid-row-2" src="{{cdn '../img/inners/about-brands/brand-img-1.png'}}" class="lazyload">
+                <img src="{{cdn '../img/inners/about-brands/cbd-tinctures.png'}}" class="lazyload">
+                <img src="{{cdn '../img/inners/about-brands/lazarus-naturals.png'}}" class="lazyload">
+                <img src="{{cdn '../img/inners/about-brands/hyperbrain-iq.png'}}" class="lazyload">
+                <img src="{{cdn '../img/inners/about-brands/hyperbrain_logo.png'}}" class="lazyload">
+                <img src="{{cdn '../img/inners/about-brands/brand-img-2.png'}}" class="lazyload">
+                <img src="{{cdn '../img/inners/about-brands/Natural_native_logo.png'}}" class="lazyload"> 
+                <img src="{{cdn '../img/inners/about-brands/brand-img-3.png'}}" >
+                <img src="{{cdn '../img/inners/about-brands/mystic_labs_logo-01.png'}}" class="lazyload">
+                <img class="image-grid-col-2 image-grid-row-2" src="{{cdn '/img/inners/about-brands/brand-img.png'}}" class="lazyload">
+                <img src="{{cdn '../img/inners/about-brands/brand-img-4.png'}}" class="lazyload">
+                <img src="{{cdn '../img/inners/about-brands/Joy.png'}}" class="lazyload">
+                <img src="{{cdn '../img/inners/about-brands/cbd-capsules.png'}}" class="lazyload">
+                <img src="{{cdn '../img/inners/about-brands/natures-script-white-glow-logo.png'}}"class="lazyload">
+                <img src="{{cdn '../img/inners/about-brands/mystic_labs_logo.png'}}" class="lazyload">
+            </div>
+
+            <!-- Our Team -->
+            <section class="OurteamSection">
+                <div class="row row-reverse our-team-con pt-5 mt-4 pb-5 mb-4">
+                    <div class="col-md-8 col-sm-6 col-xs-12 rowContent p-0">
+                        <div>
+                            <h4 class="h2 mx-auto w-75 text-center h4-brands mt-0 p-0">Our Team</h4>
+                            <p class="mx-auto text-center p-brands founder">Darren is the Founder & President of Acceleration Brands. Darren is based in the<br> Chicago working in market with the sales team and customers, he is also overseeing<br> execution across all aspects of the business.</p>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-xs-12 rowGraphic p-0">
+                        <img src="https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/president-darren.png?t=1636072674&_gl=1*1h50sbv*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNjA3MTQ4Mi4zNDUuMS4xNjM2MDcyNjc2LjM1" class="d-block ml-auto mr-0">
+                    </div>
+                </div>          
+            </section>
+            
+            
+            <!-- Our President -->
+
+            <!-- Our Head Office -->
+            <div class="head-office-bg position-relative mt-2">
+                <div class="row pre-footer-section w-100 position-relative mx-0">   
+                    <div class="w-80 mx-auto">               
+                        <div class="col-md-6 col-sm-6 col-xs-12 position-relative con-pre">
+                            <img src="{{cdn 'https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/rectangle-14.png?t=1635991332&_gl=1*1xaautf*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNTk5MDg5OC4zNDAuMS4xNjM1OTkwOTEzLjQ1'}}" class="position-relative lazyload mx-auto d-block" >
+                            <div class="abs-con">
+                                    <h2> <img src="{{cdn 'https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/location.png?t=1635990911&_gl=1*1a8rglu*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNTk5MDg5OC4zNDAuMS4xNjM1OTkwOTEzLjQ1'}}" >&nbsp;Our Head Office</h2>
+                                    <h4 class="d-none">904 Mortonsberry Drive<br>
+                                        Naperville, IL 60540</h4>
+                                    <p>Sales, Marketing, eCommerce and Supplier Management teams are based in the Western Suburbs as are all of our Operational, General & Administrative teams. Our Sales Team is based on-the-ground in key territories to support your growth.</p>
+                                    
+                            </div>
+                        </div>
+                    </div>  
+                </div>            
+            </div>
+        </div>
+    </main>
+</div>
+
+{{/partial}}
+
+{{> layout/base}}
