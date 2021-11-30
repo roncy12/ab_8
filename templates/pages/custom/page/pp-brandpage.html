@@ -195,3 +195,248 @@ brand:
 
         });
 </script>
+//==================================================================================================================================
+ ---
+brand:
+---
+
+{{#partial "head"}}
+    {{#if pagination.brand.previous}}
+        <link rel="prev" href="{{pagination.brand.previous}}">
+    {{/if}}
+    {{#if pagination.brand.next}}
+        <link rel="next" href="{{pagination.brand.next}}">
+    {{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+{{inject "brandProductsPerPage" theme_settings.brandpage_products_per_page}}
+
+<div class="container mw-100 m-0 px-0">
+    <div class="d-none">
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        <img class="lazyload" src="https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/pp-brand-banner.png?t=1636441397&_gl=1*1gdbqmi*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNjQzNDQwOS4zNTYuMS4xNjM2NDQxMTk3LjU4"/>
+        {{#if brand.image}}
+        <div class="brand-image-container">
+            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage brand.image 'thumb_size'}}">
+        </div>
+        {{/if}}
+        <h1 class="page-heading">{{{brand.name}}}</h1>
+    </div>
+
+    {{#each brand}}
+    <li>GG</li>
+  {{/each}}
+    <!-- Image Banner -->
+    <div class="cbd-tinctures-bg ppbrands">
+        <div class="cbd-oil-banner">
+            <div class="col-md-6 col-sm-6 col-xs-6 text-content">
+                <div>
+                    <h2 class="text-light mt-0">P .P EXCLUSIVELY SOLD HERE!</h2>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 content-image">
+                <img class="lazyload pp-image" src="{{cdn 'https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/p-dot-p-logo-transparent.png?t=1637213911&_gl=1*14915d2*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNzIxMTA4OS4zODkuMS4xNjM3MjE0MjkzLjYw'}}" />
+            </div>
+        </div>
+    </div>
+
+    {{{region name="brand_below_header"}}}
+</div>
+        <div class="grid-bg bg-white">
+            <div class="tinctures-grid mt-5 pt-3 homepage-featured tincs addcart-show mt-0 d-flex flex-column" component>
+                    <div class="row-product position-relative ">
+                        <div class="d-block"><h2 class="h2-product-title ml-3 text-capitalize">CBD GUMMIES </h2></div>
+                            <div class="product-column "> 
+                                <main class="page-content" id="product-listing-container">
+                            
+
+
+
+
+                                </main>
+                                                 
+
+                            </div>
+                        </div>
+            </div>
+               
+
+            </div>
+
+        </div>
+         <!-- Features -->
+         <div class="p-5 mt-5 categ-features pb-0">
+            <div class="features-row w-65">
+                <div class="col1">
+                    <img src="{{cdn 'https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/gummies-brand.png?t=1636441388&_gl=1*cxjyul*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNjQzNDQwOS4zNTYuMS4xNjM2NDQxMTk3LjU4'}}" class="d-block mx-auto">
+                    <p>Gummies</p>
+                </div>
+                
+                <div class="col2">
+                    <img src="{{cdn 'https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/tart-brand.png?t=1636441495&_gl=1*cxjyul*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNjQzNDQwOS4zNTYuMS4xNjM2NDQxMTk3LjU4'}}" class="d-block mx-auto">
+                    <p class="mt-00">Tarts</p>
+                </div>
+                
+                <div class="col3">
+                    <img src="{{cdn 'https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/cartridge-brand.png?t=1636441389&_gl=1*cxjyul*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNjQzNDQwOS4zNTYuMS4xNjM2NDQxMTk3LjU4'}}" class="d-block mx-auto">
+                    <p>CartRidge</p>
+                </div>
+            </div>
+        </div>
+
+    
+                <!-- CONSISTENT -->
+                <div class="row row-reverse flex-row properties-cbd w-100 position-relative mx-0">
+                    <div class="col-md-6 col-sm-6 col-xs-2 px-0">
+                        <img src="{{cdn 'https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/consistent-left.png?t=1636441394&_gl=1*1dxvk2y*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNjQzNDQwOS4zNTYuMS4xNjM2NDQxMTk3LjU4'}}">
+                    </div>
+                    
+                    <div class="col-md-6 col-sm-6 col-xs-12 position-relative cbd-properties">
+                        <div class="abs-con">                     
+                            <div class="font-h4">
+                                <h4 class="color-h4">CONSISTENT RELIABLE SUPPLY</h4>
+                                <p class="size-p">We are one of a few Brands with access to consistent, high quality supply across, Delta 8, Delta 10 and THCO. This means, more profitability because you will always be in-stock. Our supply chain is fast and responsive to the ever changing market conditions. As a Brand partner we are here to support you.</p>
+                                <h4 class="color-h4">BRANDED EXPERIENCE</h4>
+                                <p  class="size-p">Acceleration brands is one of a few suppliers that has the capability to deliver a branded high quality experience across multiple different formats including (Tarts, Carts, Gummies). This capability extends to packaging and delivery mechanisms.</p>    
+                                <h4 class="color-h4">HIGH QUALITY PRODUCTS</h4>
+                                <p  class="size-p">All products have the same high quality and consistency you can rely on. The best part about choosing our products is that you can trust all of our products to be THC-free.* That’s because we start with hemp grown right here in the USA. When it comes to clean regulation, the hemp plants found in our own backyard are held to a higher standard than others.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+                            <!-- CONSISTENT -->
+                            <div class="row row-reverse flex-row properties-cbd w-100 position-relative mx-0">
+                                <div class="col-md-6 col-sm-6 col-xs-2 px-0">
+                                    <img src="{{cdn 'https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/down-leftside.png?t=1636441391&_gl=1*1eta4b2*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNjQzNDQwOS4zNTYuMS4xNjM2NDQxMTk3LjU4'}}" class="lazyload">
+                                </div>
+                                
+                                <div class="col-md-6 col-sm-6 col-xs-12 px-0 position-relative ">
+                                    <img src="{{cdn 'https://cdn11.bigcommerce.com/s-2r0p327be1/product_images/uploaded_images/pp-down-right.png?t=1636441401&_gl=1*ncialt*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYzNjQzNDQwOS4zNTYuMS4xNjM2NDQxMTk3LjU4'}}" class="lazyload" >
+                                </div>
+                            </div>   
+                        <!-- SIGN UP FORM -->
+                        <div class="row w-75 position-relative mx-auto sign-up-form">
+                            <div class="col-xl-8 col-md-6 col-sm-6 col-xs-2 px-0">
+                                <h2 class="mt-0">ACCEPTING PRE-ORDERS NOW<br>
+                                    SIGN-IN TO ORDER NOW</h2>
+                                <h4>FOR MORE INFORMATION</h4>
+                                <p class="mb-0"><b>Step 1.</b>Provide Email, First Name & Last Name.</p>
+                                <p><b>Step 2.</b>Thank you For your information.</p>
+                            </div>
+                            
+                            <div class="col-xl-4 col-md-6 col-sm-6 col-xs-12 px-0 position-relative ">
+                                <form>
+                                    <div class="form-group brand-form">
+                                      <label for="exampleInputEmail1">FIRST NAME</label>
+                                      <input type="text" class="form-control">
+                                      <label for="exampleInputEmail1">LAST NAME</label>
+                                      <input type="text" class="form-control">
+                                      <label for="exampleInputEmail1">EMAIL ADDRESS</label>
+                                      <input type="email" class="form-control" id="exampleInputEmail1">
+                                      <div id="button" class="btn btn-outline-secondary float-left mt-3" href="#">
+                                        <input type="checkbox" class="check">&nbsp; Captcha
+                                    </div>
+                                      <button type="submit" class="btn btn-primary signin-brand mt-3 float-right">Sign in</button>
+                                    </div>
+                                </form>
+                        </div>                           
+
+
+{{/partial}}
+{{> layout/base}}
+
+
+    <!-- PP BRAND PAGE -->
+<script>
+
+
+    $.ajax({
+        url: '/brands',
+        type: 'get',
+        dataType: 'html',
+        success:function(e){
+        var parent =  $(e).find('.container ul.navList'); 
+        var link_courier = $(parent).children();
+        $(link_courier).each(function(index,elem){
+           var _url = $(elem).find('a.navList-action').attr("href");
+           var title = $(elem).find('a.navList-action').attr('title');
+           var titlename = $(elem).find('a.navList-action span').length;
+
+           $.ajax({
+               url: _url,
+               type:'get',
+               dataType: 'html',
+               success:function(x){
+                   var product =  $(x).find('form[data-product-compare]');
+                   var cardtitle =  $(x).find('h4.card-title>a').html();
+
+     
+                   
+                    console.log(title);
+
+
+                    if(title == "P dot P"){
+                                   var gummy =  $(x).find("ul.productGrid>li.product[data-name*='Gummy']");
+
+
+
+                                   
+                                    // console.log(findthis);
+                                    var ulGrid = '<ul class="productGrid" id="newGrid"> </ul>' ;
+                                    var rowProd =  $.find("#product-listing-container ");
+
+                                    $(rowProd).append($(ulGrid));
+
+                                    $(gummy).each(function(index, val) {
+                                        // console.log(index, val)
+                                    $(val).html(); 
+                                        html = '<li class="product">' +
+                                                            $(val).html();
+                                                         '</li>'+
+                                                        '</ul>'
+
+
+                                              
+                            
+                                    $("#newGrid").append(html)
+                                    $('[component]').append($(rowProd));
+
+                                    });
+
+                    }else{
+                        html = "";
+                    }
+                       
+                    
+
+               }
+           });
+        });
+        }
+    });
+
+
+
+        // $(document).ready(function(){
+        //         if ($("#product-listing-container:contains('undefined')")) {
+        //             console.log("contains");
+        //                 $("main#product-listing-container").append("<p class='my-5'>There are no products listed under this category.</p>")
+        //                 $("#product-listing-container").text($("#product-listing-container").text().replace("undefined", "Bye"));
+        //         }
+
+        //         var substr = [1, 2, 3, 4];
+        //             $.each(substr , function(index, val) { 
+        //               console.log(index, val)
+        //             });
+
+        //             var myObj = { firstName: "skyfoot"};
+        //             $.each(myObj, function(propName, propVal) {
+        //               console.log(propName, propVal);
+        //             });
+
+        // });
+
+
+</script>                
+                       
